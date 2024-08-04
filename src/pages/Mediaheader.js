@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "../style/mediaheader.css";
-import { Tifo } from "../media/Tifo";
 import { VideoPlayer } from "../media/VideoPlayer";
 import { MusicPlayer } from "../musicplayer/MusicPlayer";
+import { pictures } from '../data/tifo';
 
 export const Mediaheader = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -10,7 +10,15 @@ export const Mediaheader = () => {
   const handleTabClick = (index) => {
     setActiveTab(index);
   };
-
+  const [selectedPicture, setSelectedPicture] = useState(null);
+  console.log(selectedPicture);
+  const handleClick = (picture) => {
+    setSelectedPicture(picture);
+  
+  };
+  const handleClose = () => {
+    setSelectedPicture(null);
+  };
   return (
     <div className="wrapper pre">
       <div className="wrapper">
@@ -72,7 +80,23 @@ export const Mediaheader = () => {
             <div className="glider"></div>
             <section className="content">
               <div className={`item ${activeTab === 0 ? 'active' : ''}`} id="content-1">
-                <Tifo />
+              <div className="card-container">
+      {pictures.map((picture) => (
+          <button onClick={() => handleClick(picture)} key={picture.id}>
+            <img src={picture.imageUrl} className="card-img" alt={picture.title}  />
+          </button>
+      ))}
+
+      {selectedPicture && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={handleClose}>&times;</span>
+            <img src={selectedPicture.imageUrl} alt={selectedPicture.title} />
+            <p>{selectedPicture.title}</p>
+          </div>
+        </div>
+      )}
+    </div>
               </div>
               <div className={`item ${activeTab === 1 ? 'active' : ''}`} id="content-2">
                 <VideoPlayer />

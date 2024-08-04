@@ -39,7 +39,7 @@
 
 }
 .section-title{
-  padding-left: 90px; 
+  text-align: start;
   font-size: 1.3rem;
   padding-bottom: 10px;
 }
@@ -144,6 +144,6 @@
     font-size: 0.9rem;
   }
   #review-box .review-comment{
-    padding: 20px 10px;
+    padding: 20px 30px;
   }
 }

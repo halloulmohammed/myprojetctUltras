@@ -22,9 +22,9 @@
   }
   .modal {
     position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
+    top: -10%;
+    left:0;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
@@ -39,10 +39,10 @@
     text-align: center;
     border: none;
     color: white;
-    top: 20vh;
+    
   }
   .vedio-size{
-    width: 96%;
+    width: 80%;
   }
   .close {
     position: absolute;

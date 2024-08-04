@@ -4,7 +4,7 @@
 @import "./nav"; 
 #musicplayer h2, 
 #musicplayer h3 { 
-    color: #133a1b; 
+    color:hsl(230, 75%, 15%); 
 } 
 #musicplayer h3, 
 #musicplayer h4 { 
@@ -14,7 +14,14 @@ button {
     font-weight: 700; 
 }
 #musicplayer{
-    background: linear-gradient(white,green);
+    background: hsl(230, 50%, 93%);
     width: 50vw;
     border-radius: 5px;
+    margin-top: 1rem;
+}
+@media (max-width: 768px) {
+    #musicplayer{
+        width: 92vw;
+        margin-top: 0px;
+    }
 }
